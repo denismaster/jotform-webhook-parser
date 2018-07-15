@@ -1,8 +1,11 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E22D31A9-81BA-4DB4-8F58-3B9BD356E934}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JotFormWebhookParser", "src\JotFormWebhookParser\JotFormWebhookParser.csproj", "{949BBEE4-50B3-4295-815C-B1712A06CB3C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,7 +15,27 @@ Global
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
 	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{949BBEE4-50B3-4295-815C-B1712A06CB3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{949BBEE4-50B3-4295-815C-B1712A06CB3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{949BBEE4-50B3-4295-815C-B1712A06CB3C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{949BBEE4-50B3-4295-815C-B1712A06CB3C}.Debug|x64.Build.0 = Debug|Any CPU
+		{949BBEE4-50B3-4295-815C-B1712A06CB3C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{949BBEE4-50B3-4295-815C-B1712A06CB3C}.Debug|x86.Build.0 = Debug|Any CPU
+		{949BBEE4-50B3-4295-815C-B1712A06CB3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{949BBEE4-50B3-4295-815C-B1712A06CB3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{949BBEE4-50B3-4295-815C-B1712A06CB3C}.Release|x64.ActiveCfg = Release|Any CPU
+		{949BBEE4-50B3-4295-815C-B1712A06CB3C}.Release|x64.Build.0 = Release|Any CPU
+		{949BBEE4-50B3-4295-815C-B1712A06CB3C}.Release|x86.ActiveCfg = Release|Any CPU
+		{949BBEE4-50B3-4295-815C-B1712A06CB3C}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{949BBEE4-50B3-4295-815C-B1712A06CB3C} = {E22D31A9-81BA-4DB4-8F58-3B9BD356E934}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F73A41E9-91FB-4E67-8AB3-72BBADB52F4E}
 	EndGlobalSection
 EndGlobal
