@@ -1,0 +1,9 @@
+language: csharp  
+dist: trusty  
+mono: none
+dotnet: 2.0.0
+before_script:
+  - dotnet restore
+script:  
+  - dotnet build ./src/JotFormWebhookParser -c Release
+  - dotnet test ./tests/JotFormWebhookParser.Tests -c Release
