@@ -20,11 +20,41 @@ namespace JotFormWebhookParser.Tests
         }
 
         [Fact]
-        public void ShouldRemoveFirstPartOfPropertyName()
+        public void ShouldRemovePrefixInEachPropertyAndCopyValues()
         {
             var submission = new JObject
             {
-                { "q1_test", "foo" }
+                { "q1_foo", "foo" },
+                { "q1_bar", "bar" }
+            };
+
+            var parser = new JotFormParser();
+
+            var result = parser.Parse(submission);
+
+            Assert.NotNull(result);
+
+            Assert.True(result.Properties().Count() == 2);
+            Assert.Contains(result.Properties(), c => c.Name == "foo");
+            Assert.Contains(result.Properties(), c => c.Name == "bar");
+
+            Assert.Equal("foo", result["foo"]);
+            Assert.Equal("bar", result["bar"]);
+        }
+
+        [Fact]
+        public void ShouldCopyComplexValues()
+        {
+            var submission = new JObject
+            {
+                {
+                    "q1_test",
+                    new JObject
+                    {
+                        { "foo", "foo" },
+                        { "bar", "bar" }
+                    }
+                },
             };
 
             var parser = new JotFormParser();
@@ -36,7 +66,10 @@ namespace JotFormWebhookParser.Tests
             Assert.True(result.Properties().Count() == 1);
             Assert.Contains(result.Properties(), c => c.Name == "test");
 
-            Assert.Equal("foo", result["test"]);
+            Assert.True(result["test"] is JObject);
+
+            Assert.Equal("foo", result["test"]["foo"]);
+            Assert.Equal("bar", result["test"]["bar"]);
         }
     }
 }
