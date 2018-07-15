@@ -7,6 +7,11 @@ namespace JotFormWebhookParser
     {
         public JObject Parse(JObject rawRequest)
         {
+            if (rawRequest == null)
+            {
+                throw new ArgumentNullException(nameof(rawRequest));
+            }
+
             throw new NotImplementedException();
         }
     }

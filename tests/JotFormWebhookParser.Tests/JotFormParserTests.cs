@@ -14,9 +14,7 @@ namespace JotFormWebhookParser.Tests
 
             var parser = new JotFormParser();
 
-            var result = parser.Parse(submission);
-
-            Assert.Null(result);
+            Assert.Throws<ArgumentNullException>(() => parser.Parse(submission));
         }
 
         [Fact]
